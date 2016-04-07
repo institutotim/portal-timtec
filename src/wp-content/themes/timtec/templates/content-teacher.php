@@ -6,12 +6,14 @@
 <div id="page-teacher" class="base-content">
     <div class="banner">
         <div class="container">
-            <h2 class="title"><?php _oi("CURSOS"); ?> 
-            	<span class="subtitle">[<?php 
-					$s 		= get_post_meta($post->ID, 'sexo_teacher', true) == 'f' ? "a Professora":"o Professor";
-            		echo "Sobre ".$s; 
-            	?>]</span>
-            </h2>
+            <a href="lista-de-cursos">
+            	<h2 class="title"><?php _oi("CURSOS"); ?>
+	            	<span class="subtitle">[<?php 
+						$s 		= get_post_meta($post->ID, 'sexo_teacher', true) == 'f' ? "a Professora":"o Professor";
+	            		echo "Sobre ".$s; 
+	            	?>]</span>
+	            </h2>
+            </a>
         </div>
     </div>
 

@@ -4,12 +4,12 @@
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class(); ?>>
                 <?php  
-                    $category = get_the_category( $post->ID ); 
-                    $cat_id = $category[0]->term_id;
-                    $cat_name = $category[0]->name;
-                    $cat_data = get_option( "category_$cat_id" );
-                    $cat_url =  get_category_link( $cat_id );
-                    $cat_bg = !empty($cat_data['catBG']) ? $cat_data['catBG'] : '#05C3FF';
+                    $category   = get_the_category( $post->ID ); 
+                    $cat_id     = $category[0]->term_id;
+                    $cat_name   = $category[0]->name;
+                    $cat_data   = get_option( "category_$cat_id" );
+                    $cat_url    = get_category_link( $cat_id );
+                    $cat_bg     = !empty($cat_data['catBG']) ? $cat_data['catBG'] : '#05C3FF';
                 ?>
                 <header>
                     <a href="<?php echo esc_url( $cat_url ); ?>" title="<?php echo $cat_name ?>"><span class="post-category" style="background:<?php echo $cat_bg; ?>">#<?php echo $cat_name ?></span></a>
@@ -31,9 +31,22 @@
                 <div class="post-content">
                     <?php the_content(); ?>
                 </div>
+                <div class="post-tags">
+                     <?php
+                        $tags = get_the_tags();                        
+                        echo '<p>Tags</p>';
+                        if ($tags) {
+                            echo '<div class="tag-links">';
+                            foreach ($tags as $tag) {
+                                echo '<a class="btn btn-info" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';                                
+                            }                                
+                            echo '</div>';
+                        }
+                    ?>
+                </div>
             </article>
         <?php endwhile; ?>
-        </div>
+        </div>       
         <div class="sidebar-news">
             <?php dynamic_sidebar('sidebar-primary'); ?>
         </div>

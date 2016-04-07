@@ -17,15 +17,13 @@
     <div class="container">
         <div class="row">
         	<div class="sidebar-news">
-        		<h3><?php _oi('Lista de Tags') ?></h3>
+        		<h3>Lista de Categorias</h3>
                	<?php 
-				  
 				    $lista_categorias = "";
 				    $list_cat = get_categories();
-
 				    foreach ( $list_cat as $categoria ) {
 				    	if( $categoria->cat_ID !=   $cat_id_atual  ){
-				    		$cat_id = $categoria->cat_ID;
+				    		$cat_id =$categoria->cat_ID;
 					    	$cat_url =  get_category_link( $cat_id );
 					    	$cat_name = $categoria->name;
 					    	$cat_data = get_option( "category_$cat_id" );
@@ -39,19 +37,18 @@
 					    	$lista_categorias .= "</li>";
 				    	};
 				    }
-
 				    echo  "<ul>" . $lista_categorias  . "</ul>";
 				?>
                 
             </div>
             <div class="main-news">
             	<?php 
-					$category = get_the_category(); 
-					$cat_id = $category[0]->cat_ID;
-					$cat_name = $category[0]->name;
-                    $cat_url =  get_category_link( $cat_id );
-                    $cat_data = get_option( "category_$cat_id" );
-                    $cat_bg = !empty($cat_data['catBG']) ? $cat_data['catBG'] : '#05C3FF'; 
+					$category 	= get_the_category(); 
+					$cat_id 	= $category[0]->cat_ID;
+					$cat_name 	= $category[0]->name;
+                    $cat_url 	=  get_category_link( $cat_id );
+                    $cat_data 	= get_option( "category_$cat_id" );
+                    $cat_bg 	= !empty($cat_data['catBG']) ? $cat_data['catBG'] : '#05C3FF'; 
 
 					$paged = (get_query_var('page')) ? get_query_var('page') : 1;
 
@@ -64,10 +61,9 @@
 						
 					$wp_query = new WP_Query($args);
             	?>
-
             	<h3><?php _oi('Listagem de Notícias') ?></h3>
             	<h4>
-            		<?php _oi('Tag selecionada: ') ?>
+            		Categoria selecionada
             		 <a href="<?php echo esc_url( $cat_url ); ?>" title="<?php echo $cat_name; ?>" style="background:<?php echo $cat_bg; ?>"><span class="post-category">#<?php echo $cat_name; ?></span></a>
             	</h4>
             	<a href="/todas-as-noticias/" class="btn-todas-noticias">Todas as notícias ></a>
