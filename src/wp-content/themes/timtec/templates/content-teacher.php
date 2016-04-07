@@ -7,7 +7,10 @@
     <div class="banner">
         <div class="container">
             <h2 class="title"><?php _oi("CURSOS"); ?> 
-            	<span class="subtitle">[<?php _oi("Sobre o Professor"); ?>]</span>
+            	<span class="subtitle">[<?php 
+					$s 		= get_post_meta($post->ID, 'sexo_teacher', true) == 'f' ? "a Professora":"o Professor";
+            		echo "Sobre ".$s; 
+            	?>]</span>
             </h2>
         </div>
     </div>
@@ -40,15 +43,19 @@
 			            
 			        </div>
 		            <hr />
-		            <div class="lista-cursos row">
-		            	<h4><?php _oi("Cursos do professor"); ?> <?php the_title();?></h4>
+		            <div class="lista-cursos row">		            	
+		            	<h4><?php 			        
+								$s 		= get_post_meta($post->ID, 'sexo_teacher', true) == 'f' ? "a Professora":"o Professor";            		
+			            		echo "Cursos d".$s;
+		            		?>
+		            		<?php the_title();?></h4>
 		            	<ul>
 		                <?php
 							$id_teacher = $post->ID;
 							$args = array(
-								'post_type' => 'course',
-								'meta_key' => 'teacher_ids',
-								'meta_value' => $id_teacher,
+								'post_type' 	=> 'course',
+								'meta_key' 		=> 'teacher_ids',
+								'meta_value' 	=> $id_teacher,
 							);
 							
 							$loop_courses = new WP_Query( $args );
