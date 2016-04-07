@@ -25,25 +25,7 @@
                     'walker'            =>  new wp_bootstrap_navwalker()
                 ));
             ?>
-<?php 
-    function user_logado(){
-        if ( is_user_logged_in() ) {
-            $current_user = wp_get_current_user();
-            $nome_completo = $current_user->display_name;
-            $name = explode( " ", $nome_completo );
-            $iniciais = "";
-            for ($i = 0; $i < count($name); $i++) {
-                if ($i < 2) {
-                    $iniciais .= substr($name[$i],0,1); 
-                };
-            }    
-            return '<div class="menu-logado"><a href="" data-toggle="modal" data-target="#modal-logado"><span class="icon">'.$iniciais.'</span>Logado</a></div>';
 
-        }else            
-            return '<div class="menu-login"><a href="" data-toggle="modal" data-target="#modal-login"><span class="icon"></span>Login</a></div>';
-
-    }
-?>
         </nav>
     </div>
 </header>
