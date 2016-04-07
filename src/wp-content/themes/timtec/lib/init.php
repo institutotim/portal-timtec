@@ -33,6 +33,8 @@ function setup() {
         'rede-topo' => 'Menu "Rede" do topo das páginas',
         'rede-footer' => 'Menu "Rede" do rodapé das páginas',
         'rede-home' => 'Botões da seção "Rede" da home',
+
+        'geral-topo' => 'Header Global',
     ]);
 
 

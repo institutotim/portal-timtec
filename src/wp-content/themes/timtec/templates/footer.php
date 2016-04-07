@@ -75,7 +75,7 @@
                         endwhile;
                         ?>
                     </ul>
-                    <p>Powered by Instituto TIM.</p>
+                    <p>Powered by <a href="http://institutotim.org.br/" target="_blank">Instituto TIM.</a></p>
                 </div>
             </div>
             <div class="row creative-commons">

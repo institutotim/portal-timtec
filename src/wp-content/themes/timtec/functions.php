@@ -16,6 +16,7 @@ if(preg_match('#^/pt/cursos/?(\?.*)?#', $_SERVER['REQUEST_URI'])){
     die;
 }
 
+require_once('inc/wp_bootstrap_navwalker.php');
 pll_register_string('Texto do link leia mais', 'leia mais', 'timtec');
 
 function custom_excerpt_length( $length ) {

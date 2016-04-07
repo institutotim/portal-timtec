@@ -17,7 +17,7 @@ $q_header = get_option('destaques-cursos');
 <div id="page-course" class="base-content">
     <div class="banner">
         <div class="container">
-            <div id="carousel-list-course" class="carousel slide" data-ride="carousel">
+            <div id="carousel-list-course" class="carousel slide" data-ride="carousel" data-interval="<?php echo $q_header['tempo_slider']; ?>">
                 <h2 class="title"><?php _oi("CURSOS"); ?> <span class="subtitle">[<?php _oi("Lista de Cursos"); ?>]</span></h2>
 
                 <!-- Wrapper for slides -->
@@ -156,3 +156,4 @@ $q_header = get_option('destaques-cursos');
         </section>
     </div>
 </div>
+

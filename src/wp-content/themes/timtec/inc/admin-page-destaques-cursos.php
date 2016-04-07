@@ -22,7 +22,7 @@ class DestaquesCursos{
             }
         }
 
-        $destaques = get_option(self::option_name, ['texto1' => '', 'texto2' => '', 'texto3' => '']);
+        $destaques = get_option(self::option_name, ['texto1' => '', 'texto2' => '', 'texto3' => '', 'tempo_slider' => '5000']);
 
         ?>
         <style>
@@ -44,8 +44,7 @@ class DestaquesCursos{
         <div class="wrap"><div id="icon-tools" class="icon32"></div>
             <h2>Textos de destaque do cabeçalho da home cursos</h2>
            
-            <form method="POST">
-                
+            <form method="POST">                
                 <p class="destaques">
                     <label for="destaques-1">Texto slide 1</label>
                     <textarea id="destaques-1" name="destaques[texto1]"><?php echo $destaques['texto1'] ?></textarea>
@@ -60,6 +59,11 @@ class DestaquesCursos{
                 <p class="destaques">
                     <label for="destaques-3">Texto slide 3</label>
                     <textarea id="destaques-3" name="destaques[texto3]"><?php echo $destaques['texto3'] ?></textarea>
+                </p>
+
+                <p class="destaques">
+                    <label for="destaques-1">Tempo do Slider (em milisegundos)</label>
+                    <input type="number" name="destaques[tempo_slider]" value="<?php echo $destaques['tempo_slider'] ?>" />                    
                 </p>
 
                 <input type="submit" class="button button-primary button-large" value="salvar"/>
