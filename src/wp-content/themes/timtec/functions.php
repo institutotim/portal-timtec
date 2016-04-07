@@ -70,6 +70,8 @@ require __DIR__ . '/inc/metaboxes/estrutura-course.php';
 require __DIR__ . '/inc/metaboxes/qtd-aulas-course.php';
 require __DIR__ . '/inc/metaboxes/qtd-horas-course.php';
 
+require __DIR__ . '/inc/metaboxes/sexo-teacher.php';
+
 require __DIR__ . '/inc/metaboxes/timtec_user_profile_fields_save.php';
 
 require __DIR__ . '/inc/metaboxes/page-header-text.php';

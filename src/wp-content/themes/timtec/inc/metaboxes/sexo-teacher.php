@@ -44,8 +44,7 @@ class add_sexo_teacher{
         ?>        
         <select name="<?php echo __CLASS__ ?>[sexo_teacher]" >
             <option value="m" <?php echo $v == 'm'? 'selected="selected"':'' ?>>Masculino</option>
-            <option value="f" <?php echo $v == 'f'? 'selected="selected"':'' ?>
-            >Feminino</option>
+            <option value="f" <?php echo $v == 'f'? 'selected="selected"':'' ?>>Feminino</option>
         </select>
         <option>
 
