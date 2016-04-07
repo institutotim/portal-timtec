@@ -416,3 +416,11 @@ function user_logado(){
         return '<div class="menu-login"><a href="" data-toggle="modal" data-target="#modal-login"><span class="icon"></span>Login</a></div>';
 
 }
+
+function lista_conselheiros($atts){
+  ob_start();
+  get_template_part('page-conselho');
+  return ob_get_clean();
+}
+
+add_shortcode('lista_conselheiros', 'lista_conselheiros');

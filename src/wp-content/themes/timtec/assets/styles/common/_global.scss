@@ -93,3 +93,11 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
         font-size: 0.9em;
     }
 }
+
+.circle-image{
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
