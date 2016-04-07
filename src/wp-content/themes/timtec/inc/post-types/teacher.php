@@ -36,6 +36,10 @@ function teacher_post_type() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'post',
+		'rewrite'         => array(
+			'slug'		 	=> 'professor',
+			
+		),
 	);
 	register_post_type( 'teacher', $args );
 
