@@ -17,7 +17,9 @@ if(preg_match('#^/pt/cursos/?(\?.*)?#', $_SERVER['REQUEST_URI'])){
 }
 
 require_once('inc/wp_bootstrap_navwalker.php');
-pll_register_string('Texto do link leia mais', 'leia mais', 'timtec');
+
+if ( function_exists('pll_register_string') )
+  pll_register_string('Texto do link leia mais', 'leia mais', 'timtec');
 
 function custom_excerpt_length( $length ) {
     return 23;
@@ -141,24 +143,28 @@ $sage_includes = [
  */
 //*
 
-//pll_register_string('URL Cursos', 'cursos', 'timtec');
-pll_register_string('URL Software', 'software', 'timtec');
-pll_register_string('URL Redes', 'redes', 'timtec');
-pll_register_string('URL Noticias', 'noticias', 'timtec');
-pll_register_string('URL Suporte', 'suporte', 'timtec');
-pll_register_string('URL Cadastro', 'cadastro', 'timtec');
-//pll_register_string('URL Contato', 'contato', 'timtec');
-//pll_register_string('URL Conselho', 'conselho', 'timtec');
 
-pll_register_string('URL Manuais', 'manuais', 'timtec');
-pll_register_string('URL Desenvolva', 'desenvolva-o-software', 'timtec');
-pll_register_string('URL Download', 'download', 'timtec');
-//pll_register_string('URL Faq', 'faq', 'timtec');
-pll_register_string('URL Mural', 'mural', 'timtec');
-pll_register_string('URL Conheça', 'conheca-timtec', 'timtec');
-pll_register_string('URL MOOCS', 'o-que-sao-moocs', 'timtec');
-pll_register_string('URL Explore', 'explore-a-plataforma', 'timtec');
-// pll_register_string('URL Conheça a Rede', 'conheca-a-rede-tim-tec', 'timtec');
+if ( function_exists('pll_register_string') ) {
+
+  //pll_register_string('URL Cursos', 'cursos', 'timtec');
+  pll_register_string('URL Software', 'software', 'timtec');
+  pll_register_string('URL Redes', 'redes', 'timtec');
+  pll_register_string('URL Noticias', 'noticias', 'timtec');
+  pll_register_string('URL Suporte', 'suporte', 'timtec');
+  pll_register_string('URL Cadastro', 'cadastro', 'timtec');
+  //pll_register_string('URL Contato', 'contato', 'timtec');
+  //pll_register_string('URL Conselho', 'conselho', 'timtec');
+
+  pll_register_string('URL Manuais', 'manuais', 'timtec');
+  pll_register_string('URL Desenvolva', 'desenvolva-o-software', 'timtec');
+  pll_register_string('URL Download', 'download', 'timtec');
+  //pll_register_string('URL Faq', 'faq', 'timtec');
+  pll_register_string('URL Mural', 'mural', 'timtec');
+  pll_register_string('URL Conheça', 'conheca-timtec', 'timtec');
+  pll_register_string('URL MOOCS', 'o-que-sao-moocs', 'timtec');
+  pll_register_string('URL Explore', 'explore-a-plataforma', 'timtec');
+  // pll_register_string('URL Conheça a Rede', 'conheca-a-rede-tim-tec', 'timtec');
+}
 
 add_action('generate_rewrite_rules', function ($wp_rewrite) {
   $new_rules=[];
@@ -295,7 +301,8 @@ function rename_post_for_noticia_object() {
   global $wp_post_types;
   
   $wp_post_types['post']->has_archive = true;
-  $wp_post_types['post']->rewrite = pll__('noticias');
+  if (function_exists('pll__'))
+    $wp_post_types['post']->rewrite = pll__('noticias');
   
   $labels = &$wp_post_types['post']->labels;
   $labels->name = 'Notícias';
@@ -426,3 +433,10 @@ function lista_conselheiros($atts){
 }
 
 add_shortcode('lista_conselheiros', 'lista_conselheiros');
+
+
+if (!function_exists('_oi')){
+  function _oi($s){
+    echo $s;
+  }
+}
