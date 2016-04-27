@@ -3,8 +3,8 @@
         <div class="single-news">
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class(); ?>>
-                <?php  
-                    $category   = get_the_category( $post->ID ); 
+                <?php
+                    $category   = get_the_category( $post->ID );
                     $cat_id     = $category[0]->term_id;
                     $cat_name   = $category[0]->name;
                     $cat_data   = get_option( "category_$cat_id" );
@@ -17,11 +17,11 @@
                     <h3 class="post-title">
                         <?php the_title() ?>
                     </h3>
-                    <?php 
+                    <?php
                         if ( function_exists( 'sharing_display' ) ) {
                             sharing_display( '', true );
                         }
-                         
+
                         if ( class_exists( 'Jetpack_Likes' ) ) {
                             $custom_likes = new Jetpack_Likes;
                             echo $custom_likes->post_likes( '' );
@@ -33,35 +33,35 @@
                 </div>
                 <div class="post-tags">
                      <?php
-                        $tags = get_the_tags();                        
+                        $tags = get_the_tags();
                         echo '<p>Tags</p>';
                         if ($tags) {
                             echo '<div class="tag-links">';
                             foreach ($tags as $tag) {
-                                echo '<a class="btn btn-info" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';                                
-                            }                                
+                                echo '<a class="btn btn-info btn-tag" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                            }
                             echo '</div>';
                         }
                     ?>
                 </div>
             </article>
         <?php endwhile; ?>
-        </div>       
+        </div>
         <div class="sidebar-news">
             <?php dynamic_sidebar('sidebar-primary'); ?>
         </div>
     </div>
     <div id="post_relacionados" class="content row">
         <h3><?php _oi('Notícias relacionadas'); ?></h3>
-        <?php 
+        <?php
             $post_id = $post->ID;
             $args = array(
                 'post__not_in' =>  array($post_id),
                 'post_type' => 'post',
                 'cat' => $cat_id,
-                'posts_per_page' => 4, 
+                'posts_per_page' => 4,
             );
-            
+
             $loop_relacionados = new WP_Query($args);
 
             while($loop_relacionados->have_posts()): $loop_relacionados->the_post();
@@ -70,8 +70,8 @@
                 <h4><a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a></h4>
                 <p><?php  the_excerpt(); ?></p>
             </div>
-        <?php     
-            endwhile; 
+        <?php
+            endwhile;
         ?>
 
     </div>

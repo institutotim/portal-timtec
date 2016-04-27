@@ -3,20 +3,20 @@ html {
   min-height: 100%;
 }
 
-body {
-    @media screen and (min-width: $screen-lg-min) {
-        padding-bottom: 230px;
-    }
+// body {
+//     @media screen and (min-width: $screen-lg-min) {
+//         padding-bottom: 230px;
+//     }
 
-    @media screen and (min-width: $screen-md-min) {
-        padding-bottom: 250px;
-    }
+//     @media screen and (min-width: $screen-md-min) {
+//         padding-bottom: 250px;
+//     }
 
-    @media screen and (min-width: $screen-sm-min) {
-        padding-bottom: 210px;
-    }
-    
-}
+//     @media screen and (min-width: $screen-sm-min) {
+//         padding-bottom: 210px;
+//     }
+
+// }
 
 /* fix bootstrap modal padding */
 body, .navbar-fixed-top, .navbar-fixed-bottom {
@@ -29,7 +29,7 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
 }
 
 .btn {
-    
+    width: 200px;
     text-align: center;
     background: $cyan-blue;
     color: #fff;
@@ -39,6 +39,10 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
     text-transform: uppercase;
     margin: 5px;
     padding: 6px;
+}
+
+.btn-tag{
+    width: inherit
 }
 
 .clear{
@@ -60,6 +64,10 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
         font-size: 4em;
         margin-bottom: 20px;
         margin-top: 0px;
+
+        &.conselho-title{
+            font-size: 32px;
+        }
     }
 
     h4 {
@@ -68,7 +76,7 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
         font-size: 1.5em;
         margin-bottom: 20px;
         margin-top: 60px;
-        
+
         &.subtitle{
             text-decoration:underline;
             font-size: 2em;
@@ -95,9 +103,27 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
 }
 
 .circle-image{
-    width: 270px;
-    height: 270px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
+    margin: 20px auto
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.row-conselho {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+
+.row-conselho > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
 }

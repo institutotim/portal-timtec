@@ -5,7 +5,7 @@
     border: 1px solid $cyan-blue;
     border-radius: 2px;
     padding: 10px 15px;
-    
+
     &:hover {
     	text-decoration: none;
     }
@@ -18,7 +18,7 @@
     border: 1px solid #ffffff;
     border-radius: 2px;
     padding: 10px 15px;
-    
+
     &:hover {
     	text-decoration:none;
     }
@@ -28,14 +28,14 @@
 #banner {
 	background: url('../images/banner_top_home.png');
     background-position: 50% 0;
-    
+
     .cerebro {
     	background-image: url('../images/cabeca.png');
     	background-repeat: no-repeat;
     	height: 700px;
     	margin-top: 60px;
     	padding-top: 100px;
-    	
+
     	h3 {
 			width: 50%;
 			font-family: $teuton24;
@@ -46,7 +46,7 @@
 		    margin-left:28%;
 		    margin-bottom:20px;
             text-align: center;
-            
+
             span.titulo {
                 font-size:0.6em;
                 display: block;
@@ -60,7 +60,7 @@
 			width: 70%;
     		margin-left: 18%;
     		text-align: center;
-    		
+
 			h4 {
 				font-family: $teuton23;
 			    color: #fff;
@@ -76,7 +76,7 @@
 			    text-align: center;
                 line-height: 1.2em;
 			}
-				
+
 			img {
 				margin:0 auto;
 			}
@@ -87,7 +87,7 @@
 			}
 		}
     }
-	
+
 }
 .section {
     padding: 60px 0;
@@ -101,7 +101,7 @@
     .text {
         font-size: 1.2em;
         margin-bottom: 20px;
-        line-height: 1.4em;  
+        line-height: 1.4em;
     }
     .linha-centro {
         display: inline-block;
@@ -132,13 +132,13 @@
 
 	.text {
         color: #fff;
-        margin-right: 100px;	
+        margin-right: 100px;
     }
-    
+
     .links {
-        margin-top: 28px; 
+        margin-top: 28px;
     }
-    
+
     .icon-imgPrinc {
         width: 220px;
         top: 140px;
@@ -175,16 +175,16 @@
     .text {
         color: $timtec-blue;
         margin-left: 20px;
-        text-align: right;    
+        text-align: right;
     }
 
     .text1{
         margin-top: 150px;
     }
-    
+
     .links{
-        margin-top: 28px; 
-        text-align: right;   
+        margin-top: 28px;
+        text-align: right;
     }
 
     .linha-centro {
@@ -193,7 +193,7 @@
             height: 800px;
         }
     }
-    
+
     .icon-imgPrinc {
         width: 80px;
         top: 90px;
@@ -228,29 +228,29 @@
         margin-bottom: 20px;
     }
 
-    .text{ 
+    .text{
         color: #fff;
-        margin-right: 100px; 
+        margin-right: 100px;
     }
-    
+
     .links {
-        margin-top: 28px;    
+        margin-top: 28px;
     }
 
     .linha-centro {
-        margin-left: 10px;       
+        margin-left: 10px;
         img {
             @media screen and (min-width: $screen-md-min) {
-                height: 744px; 
+                height: 744px;
                 margin-top: -375px;
             }
             @media screen and (min-width: $screen-lg-min) {
-                height: 772px; 
+                height: 772px;
                 margin-top: -455px;
             }
         }
     }
-    
+
     .icon-imgPrinc {
         width: 80px;
         top: -383px;
@@ -279,7 +279,7 @@
 */
 #news {
     background:#354492;
-    
+
     h3 {
         color:#fff;
         display: inline-block;
@@ -291,7 +291,7 @@
         width: 80%;
         a {
             color:#fff;
-            
+
             &.categoria {
                 color:#f50;
             }
@@ -321,4 +321,12 @@
 .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
 .carousel-inner .item-item {
   padding:0!important;
+}
+
+.caret.caret-8{
+
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #FFF;
+
 }

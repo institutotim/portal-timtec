@@ -7,3 +7,4 @@ node_modules/
 private-files/
 src/revision.txt
 .vagrant/
+npm-debug.log

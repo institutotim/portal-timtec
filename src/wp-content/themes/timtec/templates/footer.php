@@ -75,15 +75,15 @@
                         endwhile;
                         ?>
                     </ul>
-                    <p>Powered by <a href="http://institutotim.org.br/" target="_blank">Instituto TIM.</a></p>
+                    <p>Powered by <a href="http://institutotim.org.br/" style="color: #04c3ff" target="_blank">Instituto TIM.</a></p>
                 </div>
             </div>
             <div class="row creative-commons">
                 <div class="container">
                     <div class="pull-left"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cc-banner.png" alt="Licença Creative Commons Atribuição 4.0 Internacional"></div>
                     <div class="col-sm-10 col-md-8 col-lg-8">
-                        <?php 
-                            
+                        <?php
+
                             $current_lang = pll_current_language();
 
                             if( $current_lang == "pt"){
@@ -97,7 +97,7 @@
                             if( $current_lang == "es"){
                               dynamic_sidebar('creative-commons-es');
                             }
-                         ?>  
+                         ?>
                     </div>
                 </div>
             </div>

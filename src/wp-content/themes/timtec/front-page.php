@@ -85,19 +85,19 @@
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icones-software.png" />
                         <h4><?php _oi("Software"); ?> </h4>
                         <p><?php _oi("Lorem ipsum dolor sit amet, consectetur adipiscing elit. "); ?> </p>
-                        <a href="#"><i class="fa fa-caret-down"></i></a>
+                        <a href="#"><span class="caret caret-8"></span></a>
                     </div>
                     <div class="col-md-4 item-banner js-scroll-to" data-target="#courses" >
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icones-cursos.png" />
                         <h4><?php _oi("Cursos"); ?> </h4>
                         <p><?php _oi("Lorem ipsum dolor sit amet, elit. Maecenasid velit lobortis."); ?></p>
-                        <a href="#"><i class="fa fa-caret-down"></i></a>
+                        <a href="#"><span class="caret caret-8"></span></a>
                     </div>
                     <div class="col-md-4 item-banner js-scroll-to" data-target="#network">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icones-redes.png" />
                         <h4><?php _oi("Redes"); ?> </h4>
                         <p><?php _oi("Lorem ipsum consectetur adipiscing ultricies magna porta, molestie diam."); ?></p>
-                        <a href="#"><i class="fa fa-caret-down"></i></a>
+                        <a href="#"><span class="caret caret-8"></span></a>
                     </div>
                     <div class="clear"></div>
                 </div>

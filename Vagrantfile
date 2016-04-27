@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.network "forwarded_port", guest: 80, host: 8000
+  config.vm.network "forwarded_port", guest: 80, host: 3131
   config.vm.network :private_network, ip: "192.168.78.50"
 
   # If true, then any SSH connections made will enable agent forwarding.
@@ -15,8 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder "./", "/var/www/wordpress/", create: true,
      owner: "vagrant",
-     group: "www-data",
-     mount_options: ["dmode=775,fmode=664"]
+     group: "www-data"
+#     mount_options: ["dmode=775,fmode=664"]
 
 
   config.vm.provider "virtualbox" do |vb|

@@ -1,25 +1,31 @@
-<div class="row">
-   <?php
-        $args = array(
+<div class="row row-conselho">
+    <?php
+        //$colunas    = 3; //Número de colunas
+        //$iCol       = -1;
+        $args       = array(
             'posts_per_page' => -1,
             'post_type' => 'conselho'
         );
         $loop_courses = new WP_Query($args);
-
         while ($loop_courses->have_posts()) : $loop_courses->the_post();
-        $url = get_the_permalink();
-        $thumb = wp_get_attachment_url(get_post_thumbnail_id());
-        $title = get_the_title();
-
+        $url    = get_the_permalink();
+        $thumb  = wp_get_attachment_url(get_post_thumbnail_id());
+        $title  = get_the_title();
+        // $iCol++;
+        // if ($iCol == $colunas) {
+        //     $iCol = 0;
+        //      <!--/div><div class="row"-->
+        // <?php
+        // }
     ?>
-         <div class="col-md-4">            
-            <img 
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img
+                class="img-circle img-responsive img-center"
                 src="<?php echo $thumb ?>"
                 alt="<?php echo $title ?>"
                 title="<?php echo $title ?>"
-                class="circle-image center-block"
-            >
-            <h3 class="text-center" ><?php echo $title ?></h3>
+                style="width:200px; height: 200px">
+            <h3 class="conselho-title"><?php echo $title ?></h3>
             <?php the_content(); ?>
         </div>
     <?php
