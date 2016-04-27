@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$q_header = get_option('destaques-noticias');
 
 
@@ -17,30 +17,15 @@
     <div class="container">
         <div class="row">
         	<div class="sidebar-news">
-        		<h3>Lista de Tags</h3>
-               	<?php 
-				    $html = "";
-				    $tags = get_tags();
-				    foreach ( $tags as $tag ) {
-				    	$html .= "<li style='float:left; margin-right: 3px'>
-						   		<a href='". get_tag_link( $tag->term_id ) 
-						   			."' title='".$tag->name ."' 
-						   			style='background:#05C3FF' >
-						   			<span class='post-category'>"
-						    			.$tag->name
-						    		."</span></a>
-						    	</li>";				    	
-				    }
-				    echo  "<ul>" . $html  . "</ul>";
-				?>
-                
+        		<h3>Nuvem de Tags</h3>
+        		<?php wp_tag_cloud("number=50&largest=35"); ?>
             </div>
             <div class="main-news">
-            	
-            	<h3><?php _oi('Listagem de Notícias') ?></h3>            	            	
+
+            	<h3><?php _oi('Listagem de Notícias') ?></h3>
             	<div class="list">
                 	<ul>
-                  	<?php 
+                  	<?php
                   		while ( have_posts() ) :the_post();
                   	?>
                   	<li class="list-item">
@@ -53,11 +38,11 @@
 
 
                     <div class="pagination">
-						<?php 
+						<?php
 							if( $wp_query->max_num_pages > 1 ){
-					          	if ($paged > 1) { 
+					          	if ($paged > 1) {
 					    ?>
-					            	<a href="<?php echo '?page=' . ($paged -1); //prev link ?>"> < </a>  
+					            	<a href="<?php echo '?page=' . ($paged -1); //prev link ?>"> < </a>
 					    	<?php
 					          	}
 					          	for($i=1;$i<=$wp_query->max_num_pages;$i++){
@@ -65,7 +50,7 @@
 						          		echo " | ";
 						          	}
 					       	?>
-								<a href="<?php echo '?page=' . $i; ?>" <?php echo ($paged==$i)? 'class="selected"':'';?>><?php echo $i;?></a> 
+								<a href="<?php echo '?page=' . $i; ?>" <?php echo ($paged==$i)? 'class="selected"':'';?>><?php echo $i;?></a>
 					        <?php
 					          	}
 					          	if($paged < $wp_query->max_num_pages){?>

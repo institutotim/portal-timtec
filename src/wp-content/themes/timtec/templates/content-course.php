@@ -1,16 +1,18 @@
-<?php 
+<?php
 	global $teacher_course_relation, $couse_download;
 ?>
 <div id="single-course" class="base-content">
 	<div class="banner">
         <div class="container">
-            <h2 class="title"><?php _oi("CURSOS"); ?> 
-            	<span class="subtitle">[<?php _oi("Sobre o Curso"); ?>]</span>
-            </h2>
+        	<a href="lista-de-cursos">
+	            <h2 class="title"><?php _oi("CURSOS"); ?>
+            		<span class="subtitle">[<?php _oi("Sobre o Curso"); ?>]</span>
+            	</h2>
+        	</a>
         </div>
     </div>
-	<?php while (have_posts()) : the_post(); 
-		$pre_requisito = get_metadata('post', get_the_ID(), 'pre_requisito_course', true);  
+	<?php while (have_posts()) : the_post();
+		$pre_requisito = get_metadata('post', get_the_ID(), 'pre_requisito_course', true);
 		$estrutura = get_metadata('post', get_the_ID(), 'estrutura_course', true);
 		$instituto = get_metadata('post', get_the_ID(), 'instituto_course', true);
 		$qtd_aulas = get_metadata('post', get_the_ID(), 'qtd_aulas_course', true);
@@ -22,7 +24,7 @@
         $teacher = [];
         $teacher_name = [];
 
-        if (is_array($teachers)) { 
+        if (is_array($teachers)) {
             $teachers_name = array_map(function($e) {
                 return $e->post_title;
             }, $teachers );
@@ -34,12 +36,12 @@
             $teachers_resumo = array_map(function($e) {
                 return $e->post_excerpt;
             }, $teachers );
-            
-          
+
+
             for( $i = 0; $i < count( $teachers_id ); $i++  ){
                 $link = get_the_permalink( $teachers_id[ $i ] );
                 $url_image = wp_get_attachment_url( get_post_thumbnail_id( $teachers_id[ $i ] ) );
-                
+
                 $teachers[ $i ]  = "<div class='instrutor'>";
                 if( !empty( $url_image )){
                 	$teachers[ $i ] .= "<img src='".$url_image."' alt='".$teachers_name[ $i ]."' class='circular' />";
@@ -58,7 +60,7 @@
             };
             $teacher_title = implode( ", ", $teacher_title);
             $teachers = implode( "", $teachers);
-            $teacher_name = implode( ", ", $teacher_name);	
+            $teacher_name = implode( ", ", $teacher_name);
         }
 	?>
 	<div class="container">
@@ -74,16 +76,16 @@
 	        <div class="col-md-10 colunm-content">
 		        <div class="row">
 		        	<div class="col-md-6 video-curso colunm">
-		            	<?php 
+		            	<?php
 		            		$thumb = wp_get_attachment_url(get_post_thumbnail_id());
 	                        $youtube_url = get_metadata('post', get_the_ID(), 'url_youtube_course', true);
 
                             if( empty( $youtube_url) ){
                         ?>
                                 <img src="<?php echo $thumb ?>" alt="<?php echo $title ?>"  title="<?php echo $title ?>">
-                        <?php 
+                        <?php
                             }else{
-                                $embed_code = wp_oembed_get( $youtube_url , array('width'=>355) ); 
+                                $embed_code = wp_oembed_get( $youtube_url , array('width'=>355) );
                                 echo $embed_code;
                             }
                         ?>
@@ -119,23 +121,23 @@
             <hr class="hidden-md hidden-lg">
 		    <div class="col-md-2 side-curso">
 	    		<div class="infos-curso">
-	            	<?php 
+	            	<?php
 	            		if( !empty( $qtd_aulas ) ){
 	            	?>
 	            		<p>Aulas: <span><?php echo $qtd_aulas; ?></span></p>
-	            	<?php 
+	            	<?php
 	            		}
 
 	            		if( !empty( $nivel ) ){
 	            	?>
 	            		<p>Carga horária: <span><?php echo $qtd_horas; ?></span></p>
-	            	<?php 
+	            	<?php
 	            		}
 
 	            		if( !empty( $nivel ) ){
 	            	?>
 	            		<p>Nível: <span><?php echo $nivel; ?></span></p>
-	            	<?php 
+	            	<?php
 	            		}
 	            	?>
 	            </div>
