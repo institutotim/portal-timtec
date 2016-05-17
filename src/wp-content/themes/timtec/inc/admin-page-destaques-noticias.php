@@ -6,7 +6,7 @@ add_action('admin_menu', function(){
 
 class DestaquesNoticias{
     const option_name = 'destaques-noticias';
-    
+
     static protected $idsCache = [];
 
     static function register(){
@@ -22,13 +22,13 @@ class DestaquesNoticias{
             }
         }
 
-        $destaques = get_option(self::option_name, ['header' => '', 'principal' => '']);//, 'geral' => ''
+        $destaques = get_option(self::option_name, ['header' => '', 'principal' => '', 'title-color'=>'']);//, 'geral' => ''
         ?>
         <style>
             .destaques{
                 margin-bottom:20px;
             }
-            
+
             .destaques label {
                 font-weight: bold;
                 font-size: 18px;
@@ -53,8 +53,12 @@ class DestaquesNoticias{
                     <descripiton>Cole aqui os links de destaques principais ( no máximo 3º )</descripiton><br />
                     <textarea id="destaques-principal" name="destaques[principal]"><?php echo $destaques['principal'] ?></textarea>
                 </p>
-
-                <!-- 
+                <p class="destaques">
+                    <label for="destaque-title-color">Cor Título Destaques principais</label>
+                    <descripiton>Coloque aqui o valor hexadecimal da cor. (Ex: #FFF, #000)</descripiton><br />
+                    <input id="destaque-title-color" type="text" name="destaques[title-color]" value="<?php echo $destaques['title-color'] ?>" />
+                </p>
+                <!--
                 <p class="destaques">
                     <label for="destaques-geral">Notícias geral</label>
                     <textarea id="destaques-geral" name="destaques[geral]">< ?php echo $destaques['geral'] ?></textarea>
@@ -129,7 +133,7 @@ class DestaquesNoticias{
             return null;
         }
     }
-    
+
     static function getPosts($type) {
         return self::_getPostsByConfig($type);
     }

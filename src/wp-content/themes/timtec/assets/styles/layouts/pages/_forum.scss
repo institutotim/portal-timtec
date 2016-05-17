@@ -30,6 +30,12 @@
                 }
             }
         }
+        .container {
+            position: relative;
+            @media screen and (min-width: $screen-sm-min) {
+                min-height: 160px;
+            }
+        }
     }
     .dwqa-container{
         margin: 0;
