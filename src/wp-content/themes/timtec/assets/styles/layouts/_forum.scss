@@ -1,10 +1,10 @@
 .page-header{
-    border: 0;  
+    border: 0;
     color: $navy-blue;
     font-family: $teuton25;
     margin: 0;
     padding: 0;
-    
+
     h1 {
         font-size: 4em;
         margin-bottom: 20px;
@@ -14,7 +14,7 @@
 
 .sidebar {
     max-width: 300px;
-    
+
     h3 {
         font-family: $teuton25;
         color: $navy-blue;
@@ -24,10 +24,10 @@
     ul {
         border:1 px solid #26356e;
         padding: 10px;
-        
+
         li {
             list-style: none;
-            
+
             a {
                 font-family: $teuton23;
             }
