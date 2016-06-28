@@ -14,12 +14,14 @@ class ShortcodeDestaque{
                 <?php if($title): ?>
                     <h2 class="title"><?php echo $title ?></h2>
                 <?php endif; ?>
-                    
-                <div class="featured-line">
-                    <div class="container">
-                        <?php echo $content; ?>
+
+                <?php if($content): ?>
+                    <div class="featured-line">
+                        <div class="container">
+                            <?php echo $content; ?>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </section>
         <?php
 
@@ -29,14 +31,15 @@ class ShortcodeDestaque{
         $html = preg_replace('#(\[/destaque-item\] *</p>)#', '[/destaque-item]', $html);
 
         //Verificar quantidade de 'destaque_item' de um 'destaque';
-        self::$count_item_destaque = substr_count( $content, '[destaque-item' );
+        $num = substr_count( $content, '[destaque-item' );
+        self::$count_item_destaque = $num > 3 ? 3 : $num;
 
         return do_shortcode($html);
     }
 
     static function destaque_item ($atts, $content) {
         ob_start();
-        
+
 
         $num = isset($atts['num']) && $atts['num'] > 0 && $atts['num'] < 4 ? $atts['num'] : false;
         $title = isset($atts['titulo']) ? $atts['titulo'] : false;
@@ -54,17 +57,18 @@ class ShortcodeDestaque{
             <?php endif; ?>
             <p><?php echo $content ?></p>
         </div>
-        <?php
+
+    <?php
 
         $html = ob_get_clean();
 
         return $html;
     }
 
-    
+
 
     static function init(){
-       add_shortcode('destaque-item', ['ShortcodeDestaque','destaque_item']); 
+       add_shortcode('destaque-item', ['ShortcodeDestaque','destaque_item']);
        add_shortcode('destaque', ['ShortcodeDestaque','destaque']);
     }
 

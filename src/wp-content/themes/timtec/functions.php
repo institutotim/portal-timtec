@@ -301,11 +301,11 @@ function rename_post_for_noticia_label() {
 
 function rename_post_for_noticia_object() {
   global $wp_post_types;
-  
+
   $wp_post_types['post']->has_archive = true;
   if (function_exists('pll__'))
     $wp_post_types['post']->rewrite = pll__('noticias');
-  
+
   $labels = &$wp_post_types['post']->labels;
   $labels->name = 'Notícias';
   $labels->singular_name = 'Notícias';
@@ -352,9 +352,9 @@ add_filter('widget_text', 'do_shortcode');
 
 //Bloquear acesso ao ADMIN
 
-add_action( 'admin_init', 'restrict_admin', 1 ); 
+add_action( 'admin_init', 'restrict_admin', 1 );
 function restrict_admin()
-{ 
+{
   $user = wp_get_current_user();
   if ( in_array('subscriber', $user->roles) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
     wp_redirect( site_url() );
@@ -369,7 +369,7 @@ if ( in_array('subscriber', $user->roles) ) {
 
 
 //Redireciona para página de login, caso erro.
-add_action( 'wp_login_failed', 'login_failed_redirect' ); 
+add_action( 'wp_login_failed', 'login_failed_redirect' );
 function login_failed_redirect( $user ) {
 
   $referrer = $_SERVER['HTTP_REFERER'];
@@ -403,10 +403,10 @@ function validate_reset(){
                     wp_redirect( '/reset-login/?userexist=userfalse' );
                     exit;
                 }
-            } 
+            }
     }else{
         wp_redirect( '/reset-login/?lostempty=true' );
-        exit;   
+        exit;
     }
 }
 
@@ -418,12 +418,12 @@ function user_logado(){
         $iniciais = "";
         for ($i = 0; $i < count($name); $i++) {
             if ($i < 2) {
-                $iniciais .= substr($name[$i],0,1); 
+                $iniciais .= substr($name[$i],0,1);
             };
-        }    
+        }
         return '<div class="menu-logado"><a href="" data-toggle="modal" data-target="#modal-logado"><span class="icon">'.$iniciais.'</span>Logado</a></div>';
 
-    }else            
+    }else
         return '<div class="menu-login"><a href="" data-toggle="modal" data-target="#modal-login"><span class="icon"></span>Login</a></div>';
 
 }
@@ -442,3 +442,15 @@ if (!function_exists('_oi')){
     echo $s;
   }
 }
+
+function lfdb_olho($atts, $content = ""){
+  ob_start();
+  ?>
+    <div class="article-eye">
+      <p><?php echo $content ?></p>
+    </div>
+  <?php
+  return ob_get_clean();
+}
+
+add_shortcode('lfdb_olho', 'lfdb_olho');

@@ -1,4 +1,4 @@
-<div class="row row-conselho">
+<div class="row row-flex">
     <?php
         //$colunas    = 3; //Número de colunas
         //$iCol       = -1;
@@ -18,14 +18,14 @@
         // <?php
         // }
     ?>
-        <div class="col-lg-4 col-sm-6 text-center">
+        <div class="col-lg-4 col-sm-6 text-center panel-conselho">
             <img
                 class="img-circle img-responsive img-center"
                 src="<?php echo $thumb ?>"
                 alt="<?php echo $title ?>"
                 title="<?php echo $title ?>"
                 style="width:200px; height: 200px">
-            <h3 class="conselho-title"><?php echo $title ?></h3>
+            <h3><?php echo $title ?></h3>
             <?php the_content(); ?>
         </div>
     <?php
