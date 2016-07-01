@@ -6,3 +6,6 @@ build:
 
 style:
 	cd src/wp-content/themes/timtec/ && ./node_modules/gulp/bin/gulp.js styles
+
+watch:
+	cd src/wp-content/themes/timtec/ && ./node_modules/gulp/bin/gulp.js watch

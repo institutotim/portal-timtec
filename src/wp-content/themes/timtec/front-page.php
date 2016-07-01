@@ -1,3 +1,4 @@
+<!--
 <section id="modal-home" style="display:none" one-time-show>
     <div class="bg-modal"></div>
     <div class="modal-home-wrapper">
@@ -13,7 +14,6 @@
     </div>
 </section>
 
-<!--
 <section id="news" class="" >
     <div class="container">
         <h3>Novidades: </h3>
