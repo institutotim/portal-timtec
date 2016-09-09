@@ -1,18 +1,19 @@
 <?php /* Template Name: Página  */ ?>
 <?php
-do_action('get_header');    
+do_action('get_header');
 
 the_post();
 ?>
-<div id="page" class="base-content container">
-    <section>
-        <div class="col-md-12 ">
-            <h3><?php the_title(); ?></h3>  
-            
+<div id="page-forum" class="page single">
+        <div class="banner">
+            <div class="container">
+                <h2 class="title"><?php the_title();?></h2>
+            </div>
+        </div>
+        <div class="container">
             <?php the_content(); ?>
         </div>
-    </section>
-    <div class="clear"></div>
+    </div>
 </div>
 
 <?php

@@ -22,14 +22,14 @@
                 font-family: 'Teuton24Pro';
                 font-size: 22px;
                 font-weight: normal;
-                padding: 9px 30px 9px 0;
+                padding: 4px 30px 9px 0;
                 text-align: right;
                 width: 190px;
             }
-        } 
+        }
         input, textarea {
             border: 1px solid #ccc;
-            padding: 12px 6px !important; 
+            // padding: 12px 6px !important;
         }
         .pbreak .pbPrevious, .pbreak .pbNext, .pbSubmit {
             float: right;
@@ -69,10 +69,10 @@
                     float: none;
                     width: 100%;
                 }
-            } 
+            }
             input, textarea {
                 border: 1px solid #ccc;
-                padding: 12px 6px !important; 
+                // padding: 12px 6px !important;
                 margin: 0;
             }
         }

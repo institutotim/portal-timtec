@@ -12,8 +12,8 @@
             </button>
         </div>
         <nav class="collapse navbar-collapse navbar-nav" id="main-navbar-collapse">
-            <?php                
-                wp_nav_menu( array(                    
+            <?php
+                wp_nav_menu( array(
                     'items_wrap'        => '<ul id="menu-menu-pt" class="nav nav-pills">%3$s</ul>'.user_logado(),
                     'menu'              => 'geral-topo',
                     'theme_location'    => 'geral-topo',
@@ -31,7 +31,7 @@
 </header>
 
 
-<?php 
+<?php
     if ( is_user_logged_in() ) {
         $current_user = wp_get_current_user();
 ?>
@@ -53,20 +53,20 @@
                         $iniciais = "";
                         for ($i = 0; $i < count($name); $i++) {
                             if ($i < 2) {
-                                $iniciais .= substr($name[$i],0,1); 
+                                $iniciais .= substr($name[$i],0,1);
                             };
                         }
-                        echo $iniciais;        
+                        echo $iniciais;
                     ?>
                     </div>
-                    <div class="text"><span><?php echo esc_html( $current_user->user_firstname ); ?></span>, para para editar seus dados de perfil, <a href="/cadastro/">clique aqui</a>.</div>
+                    <div class="text"><span><?php echo esc_html( $current_user->user_firstname ); ?></span>, para editar seus dados de perfil, <a href="/cadastro/">clique aqui</a>.</div>
                 </div>
           </div>
         </div>
       </div>
     </div>
 </div>
-<?php 
+<?php
     }else{
 ?>
     <!-- modal login -->
@@ -100,6 +100,6 @@
 </div>
 
 
-<?php         
+<?php
     }//EndIf User Logged
 ?>

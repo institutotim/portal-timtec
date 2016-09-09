@@ -164,6 +164,7 @@ blockquote p {
     h3{
         @extend .margin-t-20;
         // color: #E6E6E6
+        color: #7d7974;
     }
 }
 
@@ -176,20 +177,21 @@ div.article-eye {
     @media screen and (min-width: $screen-md-min) {
         float: left;
         margin-right: 20px;
+        margin-bottom: 110px;
         text-align: left;
         width: 40%;
     }
     @media screen and (min-width: $screen-lg-min) {
         width: 30%;
     }
-    p {
+    > p {
         color: $timtec-blue;
         font-family: $teuton25;
-        font-size: 44px;
-        line-height: 120%;
+        font-size: 44px !important;
+        line-height: 120% !important;
         @media screen and (min-width: $screen-sm-min) {
-            font-size: 52px;
-            line-height: 130%;
+            font-size: 52px !important;
+            line-height: 130% !important;
         }
     }
 }
