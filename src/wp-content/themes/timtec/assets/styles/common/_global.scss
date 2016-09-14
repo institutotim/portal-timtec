@@ -137,25 +137,31 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
     margin-top: 20px !important
 }
 
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-blockquote p {
-  display: inline;
+blockquote
+{
+    font-style: normal;
+    color: #7d7974;
+    border-left: 8px solid #7d7974;
+    padding-left: 30px;
+    > p
+    {
+        font-weight: bold;
+        font-size: 2em !important;
+        line-height: 152% !important;
+        margin-bottom: 0px !important;
+        &:before
+        {
+            padding-top: 15px;
+            content: '“';
+            font-family: Teuton23Pro,"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 7em!important;
+            display: block;
+            margin-bottom: -55px;
+            margin-top: 60px;
+            font-weight: initial;
+            margin-left: -14px;
+        }
+    }
 }
 
 .panel-conselho{
@@ -163,8 +169,6 @@ blockquote p {
     margin-top: 10px;
     h3{
         @extend .margin-t-20;
-        // color: #E6E6E6
-        color: #7d7974;
     }
 }
 
