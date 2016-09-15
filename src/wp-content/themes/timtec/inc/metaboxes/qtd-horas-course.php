@@ -37,7 +37,7 @@ class add_qtd_horas_course{
            $content = $metadata['qtd_horas_course'][0];
         };
         ?>
-        <input type="time" name="<?php echo __CLASS__ ?>[qtd_horas_course]" value="<?php echo  $content; ?>" style="background-color: #fff; font-size: 1.7em; height: 1.7em; line-height: 100%; margin: 0; outline: 0; padding: 3px 8px; width: 100%;" />
+        <input type="text" name="<?php echo __CLASS__ ?>[qtd_horas_course]" value="<?php echo  $content; ?>" style="background-color: #fff; font-size: 1.7em; height: 1.7em; line-height: 100%; margin: 0; outline: 0; padding: 3px 8px; width: 100%;" />
         <?php
     }
 
@@ -75,4 +75,3 @@ class add_qtd_horas_course{
 
 }
 add_qtd_horas_course::init();
-	
