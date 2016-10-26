@@ -6,3 +6,6 @@ build:
 
 style:
 	cd src/wp-content/themes/timtec/ && ./node_modules/gulp/bin/gulp.js styles
+
+js:
+	cd src/wp-content/themes/timtec/ && ./node_modules/gulp/bin/gulp.js jsTasks

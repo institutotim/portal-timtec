@@ -42,17 +42,49 @@ $header_text = trim(get_post_meta(get_the_ID(), 'header_text', true ));
             $nome_usuario = $current_user->user_login;
             $email = $current_user->user_email;
             $confirmar_email = $current_user->user_email;
-            $estado = get_user_meta( $user_id , 'estado' , true); 
+            $estado = get_user_meta( $user_id , 'estado' , true);
             $cidade = get_user_meta( $user_id , 'cidade', true);
-            $instituicao = get_user_meta( $user_id , 'instituicao' , true); 
+            $instituicao = get_user_meta( $user_id , 'instituicao' , true);
             $editable = "not-editable";
             $attr_editable = 'disabled="disabled" readonly';
         }
     ?>
+    <script>
+        jQuery(document).ready(function($) {
+            $('.js-create-user-meta-f').on('submit', function () {
+                var $form = $(this);
+                $.ajax({
+                    url: vars.ajaxurl + "?action=saveCadUserDown",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: $form.serialize(),
+                    success: function (r) {
+                        $(".mensagem_erro").hide();
+                        if( r["error"] === "Este nome de usuário já existe!" ){
+                            $(".erro_usuario").show();
+                        } else if( r["error"] === "Este email já está em uso!" ){
+                            $(".erro_email").show();
+                        } else if( r['success']){
+                            console.log('here');
+                            window.location = r['url'];
+                            // window.location.reload(true);
+                        } else{
+                            $('.'+r['error']).show();
+                        }
 
+                    },
+                    error: function (r) {
+                        $(".mensagem_erro").hide();
+                        console.log( r );
+                    }
+                });
+                return false;
+              });
+        });
+    </script>
     <section class="page-content">
         <div class="container">
-            <form class="form-cadastro js-create-user-meta" method="post">
+            <form class="form-cadastro js-create-user-meta-f" method="post">
                 <fieldset>
                     <?php
                         if ( is_user_logged_in() ) {
@@ -61,7 +93,7 @@ $header_text = trim(get_post_meta(get_the_ID(), 'header_text', true ));
                             echo "<legend><span>Crie uma conta</span></legend>";
                         }
                     ?>
-                    
+
 
                     <p class="obrigatorios">* campos obrigatórios</p>
                     <div class="form-group">
@@ -81,6 +113,7 @@ $header_text = trim(get_post_meta(get_the_ID(), 'header_text', true ));
                     <div class="form-group">
                         <label for="email">E-mail *</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>" required>
+                        <div class="mensagem_erro diff_email">O e-mail e o e-mail de confirmação não coincidem</div>
                         <div class="mensagem_erro erro_email">Este email já está em uso!<br />Por favor digite outro email.</div>
                     </div>
                     <div class="form-group">
@@ -102,6 +135,8 @@ $header_text = trim(get_post_meta(get_the_ID(), 'header_text', true ));
                     <div class="form-group">
                         <label for="senha">Senha <?php echo (!is_user_logged_in()) ? "*": ""; ?></label>
                         <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" <?php echo (!is_user_logged_in()) ? "required": ""; ?>>
+                        <div class="mensagem_erro diff_pass">A senha e a senha de confirmação não coincidem</div>
+                        <div class="mensagem_erro low_pass">A senha a senha deve ter no mínimo 6 caracteres</div>
                     </div>
                     <div class="form-group">
                         <label for="senha">Repetir Senha <?php echo (!is_user_logged_in()) ? "*": ""; ?></label>
@@ -111,14 +146,13 @@ $header_text = trim(get_post_meta(get_the_ID(), 'header_text', true ));
                         if ( is_user_logged_in() ) {
                     ?>
                         <button type="submit" class="btn btn-default btn-block">Editar conta</button>
-                    <?php 
+                    <?php
                         }else{
                     ?>
                        <button type="submit" class="btn btn-default btn-block">Criar conta</button>
-                    <?php        
+                    <?php
                         }
                     ?>
-                    
                 </fieldset>
             </form>
         </div>

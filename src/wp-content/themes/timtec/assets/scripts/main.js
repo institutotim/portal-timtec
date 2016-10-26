@@ -78,37 +78,37 @@
   /**
   * Formulário de criação de usuário
   */
-  $('.js-create-user-meta').on('submit', function () {
-    
-    var $form = $(this);
+  // $('.js-create-user-meta').on('submit', function () {
 
-    $.ajax({
-        url: vars.ajaxurl + "?action=saveCadUserDown",
-        type: 'POST',
-        dataType: 'json',
-        data: $form.serialize(),
-        success: function (r) {
-          /*jshint -W069 */
-          $(".mensagem_erro").hide();
-          if(r["error"] === "true"){
-            alert("cadastro feito com sucesso");
-          }else{
-            if( r["error"] === "Este nome de usuário já existe!" ){
-              $(".erro_usuario").show();
-            }
+  //   var $form = $(this);
 
-            if( r["error"] === "Este email já está em uso!" ){
-              $(".erro_email").show();
-            }
-          }
-        },
-        error: function (r) {
-          $(".mensagem_erro").hide();
-          console.log( r );  
-        }
-    });
-    return false;
-  });
+  //   $.ajax({
+  //       url: vars.ajaxurl + "?action=saveCadUserDown",
+  //       type: 'POST',
+  //       dataType: 'json',
+  //       data: $form.serialize(),
+  //       success: function (r) {
+  //         console.log('xxxxx');
+  //         $(".mensagem_erro").hide();
+  //         if(r["error"] === "true"){
+  //           alert("cadastro feito com sucesso");
+  //         }else{
+  //           if( r["error"] === "Este nome de usuário já existe!" ){
+  //             $(".erro_usuario").show();
+  //           }
+
+  //           if( r["error"] === "Este email já está em uso!" ){
+  //             $(".erro_email").show();
+  //           }
+  //         }
+  //       },
+  //       error: function (r) {
+  //         $(".mensagem_erro").hide();
+  //         console.log( r );
+  //       }
+  //   });
+  //   return false;
+  // });
 
 /**
 * Slide News
