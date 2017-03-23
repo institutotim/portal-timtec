@@ -1,61 +1,120 @@
-# Portal TIMTec
+# [Sage](https://roots.io/sage/)
+[![Build Status](https://travis-ci.org/roots/sage.svg)](https://travis-ci.org/roots/sage)
+[![devDependency Status](https://david-dm.org/roots/sage/dev-status.svg)](https://david-dm.org/roots/sage#info=devDependencies)
 
-O Portal TIMTec é desenvolvido utilizando Wordpress.
+Sage is a WordPress starter theme based on HTML5 Boilerplate, gulp, Bower, and Bootstrap Sass, that will help you make better themes.
 
-## Desenvolvimento
+* Source: [https://github.com/roots/sage](https://github.com/roots/sage)
+* Homepage: [https://roots.io/sage/](https://roots.io/sage/)
+* Documentation: [https://roots.io/sage/docs/](https://roots.io/sage/docs/)
+* Twitter: [@rootswp](https://twitter.com/rootswp), [@retlehs](https://twitter.com/retlehs), [@swalkinshaw](https://twitter.com/swalkinshaw), [@Foxaii](https://twitter.com/Foxaii), [@c2foryou](https://twitter.com/c2foryou), [@austinpray](https://twitter.com/austinpray)
+* Newsletter: [Subscribe](http://roots.io/subscribe/)
+* Forum: [https://discourse.roots.io/](https://discourse.roots.io/)
 
-Os pré-requisitos do sistema para a instalação são:
-* Vagrant (https://www.vagrantup.com/downloads.html)
-* Nodejs e npm (https://docs.npmjs.com/getting-started/installing-node)
+## Requirements
 
-Clone este repositório, utilizando o comando a seguir:
+| Prerequisite    | How to check | How to install
+| --------------- | ------------ | ------------- |
+| PHP >= 5.4.x    | `php -v`     | [php.net](http://php.net/manual/en/install.php) |
+| Node.js 0.12.x  | `node -v`    | [nodejs.org](http://nodejs.org/) |
+| gulp >= 3.8.10  | `gulp -v`    | `npm install -g gulp` |
+| Bower >= 1.3.12 | `bower -v`   | `npm install -g bower` |
+
+For more installation notes, refer to the [Install gulp and Bower](#install-gulp-and-bower) section in this document.
+
+## Features
+
+* [gulp](http://gulpjs.com/) build script that compiles both Sass and Less, checks for JavaScript errors, optimizes images, and concatenates and minifies files
+* [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing
+* [Bower](http://bower.io/) for front-end package management
+* [asset-builder](https://github.com/austinpray/asset-builder) for the JSON file based asset pipeline
+* [Sass](https://github.com/twbs/bootstrap-sass) [Bootstrap](http://getbootstrap.com/)
+* [Theme wrapper](https://roots.io/sage/docs/theme-wrapper/)
+* ARIA roles and microformats
+* Posts use the [hNews](http://microformats.org/wiki/hnews) microformat
+* [Multilingual ready](https://roots.io/wpml/) and over 30 available [community translations](https://github.com/roots/sage-translations)
+
+Install the [Soil](https://github.com/roots/soil) plugin to enable additional features:
+
+* Cleaner output of `wp_head` and enqueued assets
+* Cleaner HTML output of navigation menus
+* Root relative URLs
+* Nice search (`/search/query/`)
+* Google CDN jQuery snippet from [HTML5 Boilerplate](http://html5boilerplate.com/)
+* Google Analytics snippet from [HTML5 Boilerplate](http://html5boilerplate.com/)
+
+## Installation
+
+Clone the git repo - `git clone https://github.com/roots/sage.git` and then rename the directory to the name of your theme or website.
+
+If you don't use [Bedrock](https://github.com/roots/bedrock), you'll need to add the following to your `wp-config.php` on your development installation:
+
+```php
+define('WP_ENV', 'development');
 ```
-$ git clone https://github.com/institutotim/portal-timtec.git
+
+## Configuration
+
+Edit `lib/config.php` to enable or disable theme features
+
+Edit `lib/init.php` to setup navigation menus, post thumbnail sizes, post formats, and sidebars.
+
+## Theme development
+
+Sage uses [gulp](http://gulpjs.com/) as its build system and [Bower](http://bower.io/) to manage front-end packages.
+
+### Install gulp and Bower
+
+Building the theme requires [node.js](http://nodejs.org/download/). We recommend you update to the latest version of npm: `npm install -g npm@latest`.
+
+From the command line:
+
+1. Install [gulp](http://gulpjs.com) and [Bower](http://bower.io/) globally with `npm install -g gulp bower`
+2. Navigate to the theme directory, then run `npm install`
+3. Run `bower install`
+
+You now have all the necessary dependencies to run the build process.
+
+### Available gulp commands
+
+* `gulp` — Compile and optimize the files in your assets directory
+* `gulp watch` — Compile assets when file changes are made
+* `gulp --production` — Compile assets for production (no source maps).
+
+### Using BrowserSync
+
+To use BrowserSync during `gulp watch` you need to update `devUrl` at the bottom of `assets/manifest.json` to reflect your local development hostname.
+
+For example, if your local development URL is `http://project-name.dev` you would update the file to read:
+```json
+...
+  "config": {
+    "devUrl": "http://project-name.dev"
+  }
+...
+```
+If your local development URL looks like `http://localhost:8888/project-name/` you would update the file to read:
+```json
+...
+  "config": {
+    "devUrl": "http://localhost:8888/project-name/"
+  }
+...
 ```
 
-Com o `vagrant` instalado, entre no diretório clonado e utilize o comando `vagrant up`, para iniciar a Máquina virtual do Vagrant:
-```
-$ cd portal-timtec
-$ vagrant up
-```
+## Documentation
 
-Após a Máquina Virtual ser inicializada, a pasta `portal-timtec/src` estará compartilhada com a máquina do Vagrant.
+Sage documentation is available at [https://roots.io/sage/docs/](https://roots.io/sage/docs/).
 
-O próximo passo, é baixar as bibliotecas utilizadas usando o Node. Você pode utilia o comando `make build`:
-```
-$ make build
-```
+## Contributing
 
-Este comando instala as dependências do `NodeJS`, `Bower` e realiza tarefas do `Gulp`.
+Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
 
-Sempre que forem alterados arquivos de estilo `SASS`, para a alteração ser valida é necessário executar as tarefas do Gulp novamente. Esta tarefa está dentro do `make build` e também no comando `make style`:
+## Community
 
-```
-$ make style
-```
+Keep track of development and community news.
 
-O Wordpress já está instalado e pode ser acessado pelo endereço: `http://192.168.78.50/` (configurado no arquivo Vagrantfile). Ao acessar serão pedidas as informações do site e o usuário/senha de administrador. Após completar a instalação é necessário ativar os Plugins e o Tema do TIM Tec.
-
-Os plugins necessários para que o tema funcione corretamente podem ser vistos na sessão Plugins e já estão instalados neste repositório, basta ativá-los no painel adminsitrador na página de Plugins e ativar o tema "Sage Starter Theme" na página de Temas.
-
-## Plugins
-
-Os plugins listados são necessários para o funcoinamento correto do site:
-
-* Contact Form to Email (https://wordpress.org/plugins/contact-form-to-email/)
-* DW Question Answer (https://wordpress.org/plugins/dw-question-answer/)
-* Facebook Feed (https://wordpress.org/plugins/facebook-feed/)
-* Google Analytics by Yoast (https://wordpress.org/plugins/google-analytics-for-wordpress/)
-* Jetpack por WordPress.com (https://wordpress.org/plugins/jetpack/)
-* Mailgun (https://wordpress.org/plugins/mailgun/)
-* Polylang (https://wordpress.org/plugins/polylang/)
-* WordPress Importer (https://wordpress.org/plugins/wordpress-importer/)
-* WP Edit in Place (https://wordpress.org/plugins/wp-edit-in-place/)
-
-## Shortcodes
-
-Aqui estão listados shortcodes que acompanham o tema do TIM Tec.
-
-### Listar Conselheiros
-
-Para listar em um post todos os conselheiros cadastrados, o shortcode que deve ser incluído na edição das páginas é `[lista_conselheiros]`.
+* Participate on the [Roots Discourse](https://discourse.roots.io/)
+* Follow [@rootswp on Twitter](https://twitter.com/rootswp)
+* Read and subscribe to the [Roots Blog](https://roots.io/blog/)
+* Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
