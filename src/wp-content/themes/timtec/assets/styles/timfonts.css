@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'TIMSansWeb';
+  src: url('../fonts/Medium/TIMSansWeb-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Medium/TIMSansWeb-Medium.svg#TIMSansWeb') format('svg'), /* Legacy iOS */
+       url('../fonts/Medium/TIMSansWeb-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Medium/TIMSansWeb-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Medium/TIMSansWeb-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Medium/TIMSansWeb-Medium.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'TIMSansWebBold';
+  src: url('../fonts/Bold/TIMSansWeb-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Bold/TIMSansWeb-Bold.svg#TIMSansWeb') format('svg'), /* Legacy iOS */
+       url('../fonts/Bold/TIMSansWeb-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Bold/TIMSansWeb-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Bold/TIMSansWeb-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Bold/TIMSansWeb-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}

@@ -3,8 +3,8 @@
 <?php
 global $teacher_course_relation;
 
-do_action('get_header');    
-get_template_part('templates/header');
+//do_action('get_header');    
+//get_template_part('templates/header');
 ?>
 <div id="page-course" class="base-content container">
     <section>

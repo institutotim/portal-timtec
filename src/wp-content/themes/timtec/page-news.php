@@ -4,7 +4,9 @@
  */
 
 $q_header = get_option('destaques-noticias');
-$q_principal = DestaquesNoticias::getQuery('principal');
+$q_principal = new WP_Query( array( 'post_type' => 'destaques-noticias', 'paged' => $paged ) );
+
+//$q_principal = DestaquesNoticias::getQuery('principal');
 $q_atuais = new WP_Query(['posts_per_page' => 3]);
 $not_post_list_id;
 
@@ -31,8 +33,8 @@ function _date(){
     the_time('d/m/Y');
 }
 
-do_action('get_header');
-get_template_part('templates/header');
+//do_action('get_header');
+//get_template_part('templates/header');
 
 $destaques_style = 'style="color:'.$q_header['title-color'].'"';
 ?>
@@ -50,8 +52,9 @@ $destaques_style = 'style="color:'.$q_header['title-color'].'"';
         <div class="row">
             <div class="main-news">
                 <div class="featured">
+
                     <?php
-                    while($q_principal->have_posts()):
+                    while ( $q_principal->have_posts() ):
                         $q_principal->the_post();
                         $not_post_list_id[] = $post->ID;
 

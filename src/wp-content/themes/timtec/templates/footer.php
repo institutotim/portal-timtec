@@ -1,61 +1,57 @@
-<?php global $_MENUS; ?>
-<footer class="content-info hidden-xs" role="contentinfo">
-    <div id="footer-info">
-        <div class="container">
-            <div class="row">
-                <div class="content-footer col-md-9 col-sm-12">
-
-                    <section class="widget nav_menu-2 widget_nav_menu ">
-                        <h3>Sobre</h3>
+</div>
+<div id="footer-tim" style="margin:0">
+	<div class="footer-tim">
+		<div class="box-it box-sz1">
+			<h2>Sobre</h2>
                         <div class="menu-sobre-container">
                             <?php
                             wp_nav_menu(array(
-                                'items_wrap' => '<ul id="%1$s" class="sub-menu">%3$s</ul>',
+                                'items_wrap' => '<ul id="%1$s" class="footer-links">%3$s</ul>',
                                 'theme_location'    => 'sobre-footer',
                             ));
                             ?>
                         </div>
-                    </section>
 
-                    <section class="widget nav_menu-3 widget_nav_menu ">
-                        <h3>Software</h3>
-                        <div class="menu-software-container">
+		</div>
+
+		<div class="box-it box-sz1 footerborder-left">
+			<h2>Software</h2>
                             <?php
                             wp_nav_menu(array(
-                                'items_wrap' => '<ul id="%1$s" class="sub-menu">%3$s</ul>',
+                                'items_wrap' => '<ul id="%1$s" class="footer-links">%3$s</ul>',
                                 'theme_location'    => 'software-footer',
                             ));
                             ?>
-                        </div>
-                    </section>
+		</div>
 
-                    <section class="widget nav_menu-4 widget_nav_menu ">
-                        <h3>Cursos</h3>
-                        <div class="menu-cursos-container">
+		<div class="box-it box-sz1 footerborder-left">
+			<h2>Cursos</h2>
                             <?php
                             wp_nav_menu(array(
-                                'items_wrap' => '<ul id="%1$s" class="sub-menu">%3$s</ul>',
+                                'items_wrap' => '<ul id="%1$s" class="footer-links">%3$s</ul>',
                                 'theme_location'    => 'cursos-footer',
                             ));
                             ?>
-                        </div>
-                    </section>
 
-                    <section class="widget nav_menu-5 widget_nav_menu ">
-                        <h3>Rede</h3>
-                        <div class="menu-rede-container">
+		</div>
+		  
+		<div class="box-it box-sz1 footerborder-left">
+			<h2>Redes</h2>
                             <?php
                             wp_nav_menu(array(
-                                'items_wrap' => '<ul id="%1$s" class="sub-menu">%3$s</ul>',
+                                'items_wrap' => '<ul id="%1$s" class="footer-links">%3$s</ul>',
                                 'theme_location'    => 'rede-footer',
                             ));
                             ?>
-                        </div>
-                    </section>
-                </div>
-                <div class="social col-md-3 col-sm-12">
-                    <h4>Acompanhe nossas redes</h4>
-                    <ul>
+
+		</div>
+
+
+		<div class="box-it box-sz2 footerborder-left">
+			<a href="http://www.institutotim.org.br/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/imagens/logo_header_institutotim.png" alt="" title="" /></a>
+<!--			<h2>Instituto TIM nas Redes</h2>
+
+                    <ul class="rede-social">
                         <?php
                         $loop_redessociais = new WP_Query(
                             array(
@@ -75,36 +71,12 @@
                         endwhile;
                         ?>
                     </ul>
-                    <p>Powered by <a href="http://institutotim.org.br/" style="color: #04c3ff" target="_blank">Instituto TIM.</a></p>
-                </div>
-            </div>
-            <div class="row creative-commons">
-                <div class="container">
-                    <div class="pull-left">
-                        <a href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cc-banner.png" alt="Licença Creative Commons Atribuição 4.0 Internacional">
-                        </a>
-                    </div>
-                    <div class="col-sm-10 col-md-8 col-lg-8">
-                        <?php
+-->                    
+		</div>
+	</div>
 
-                            $current_lang = pll_current_language();
+	<div class="creditos">
+		 Copyright TIM Celular 2017 - Todos os direitos reservados.
+	</div>
 
-                            if( $current_lang == "pt"){
-                              dynamic_sidebar('creative-commons-pt');
-                            }
-
-                            if( $current_lang == "en"){
-                              dynamic_sidebar('creative-commons-en');
-                            }
-
-                            if( $current_lang == "es"){
-                              dynamic_sidebar('creative-commons-es');
-                            }
-                         ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+</div>

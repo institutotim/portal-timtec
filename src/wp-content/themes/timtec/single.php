@@ -23,8 +23,8 @@ function _date(){
     the_time('d/m/Y');
 }
 
-do_action('get_header');
-get_template_part('templates/header');
+//do_action('get_header');
+//get_template_part('templates/header');
 ?>
 
 <div id="page-news" class="base-content page single">

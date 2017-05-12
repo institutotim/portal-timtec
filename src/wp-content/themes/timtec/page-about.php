@@ -5,8 +5,8 @@
 ?>
 
 <?php
-do_action('get_header');
-get_template_part('templates/header');
+//do_action('get_header');
+//get_template_part('templates/header');
 
 $header_text = trim(get_post_meta(get_the_ID(), 'header_text', true ));
 ?>
