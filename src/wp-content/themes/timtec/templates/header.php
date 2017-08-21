@@ -165,7 +165,6 @@
     color: #00a4e4;
     display: block;
     margin: 0;
-    margin-top: 20px;
     min-height: inherit;
     padding: 17px 20px;
 }
