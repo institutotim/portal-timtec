@@ -51,7 +51,6 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
 
 .main {
     padding: 0px !important;
-    margin-top: 58px;
 }
 
 .base-content{
@@ -198,4 +197,8 @@ div.article-eye {
             line-height: 130% !important;
         }
     }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
 }
