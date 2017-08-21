@@ -189,7 +189,7 @@ nav.navbar {
     margin: 16px 0 0 20px;
 }
 .logo2.logo-project > a > img {
-    width: 90px;
+    width: 78px;
 }
 
 div.divider{
@@ -199,6 +199,15 @@ div.divider{
     left: 10px;
     top: 18px;
     float: left
+}
+
+@media only screen and (max-width: 400px){
+    div.divider {
+        left: 7px;
+    }
+    .logo2.logo-project {
+        margin: 16px 0 0 12px;
+    }
 }
 
 @media only screen and (max-width: 799px){
