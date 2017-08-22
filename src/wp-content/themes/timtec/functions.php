@@ -453,8 +453,8 @@ function lfdb_olho($atts, $content = ""){
   return ob_get_clean();
 }
 
+add_shortcode('lfdb_olho', 'lfdb_olho');
 
 register_nav_menus( array(
             'footer-1' => __( 'Footer Menu 1', 'Nexus' ),
 ) );
-        
